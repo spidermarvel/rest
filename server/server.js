@@ -1,6 +1,7 @@
+require('./config/config');
+
 const express = require('express');
 const app = express();
-const port = 3000;
 
 /* bodyparser para facilitar captura parametros post */
 const bodyParser = require('body-parser')
@@ -48,6 +49,6 @@ app.delete('/usuario', (req, res) => {
     res.json('delete usuario');
 });
 
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+app.listen(process.env.PORT, () => {
+    console.log(`Example app listening at http://localhost:${process.env.PORT}`)
 })
